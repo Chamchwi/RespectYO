@@ -21,6 +21,10 @@ app.post('/register', function (req, res) {
     var gender = req.body.gender;
 });
 
+app.post('/User/list/', function (req, res) {
+    
+});
+
 app.post('/board/view/:category', function (req, res) {
     var category = req.params.category;
 });
