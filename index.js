@@ -76,11 +76,11 @@ app.post('/board/write/:category', function (req, res) {
         var board = new Board({
             title: req.body.title,
             category: 0,
-            writer: req.body.writer,
-            content: req.body.connect
+            content: req.body.content,
+            writer: req.body.writer
         });
 
-        if (writer == "") {
+        if (req.body.writer == "") {
             board.writer = "익명";
         }
 
@@ -99,11 +99,11 @@ app.post('/board/write/:category', function (req, res) {
         var board = new Board({
             title: req.body.title,
             category: 1,
-            writer: req.body.writer,
-            content: req.body.content
+            content: req.body.content,
+            writer: req.body.writer
         });
 
-        if (writer == "") {
+        if (req.body.writer == "") {
             board.writer = "익명";
         }
 
