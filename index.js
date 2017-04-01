@@ -60,7 +60,14 @@ app.post('/board/view/:category', function (req, res) {
 });
 
 app.post('/board/all', function (req, res) {
-
+    Board.find(function (err, board) {
+        if (err) {
+            return res.json({
+                success: false
+            })
+        }
+        res.json(board);
+    })
 });
 
 app.post('/board/write/:category', function (req, res) {
