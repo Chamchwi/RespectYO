@@ -6,3 +6,5 @@ var boardSchema = new Schema({
     content: String,
     category: Number
 });
+
+module.exports = mongoose.model('board', boardSchema);
