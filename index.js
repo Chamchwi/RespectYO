@@ -25,6 +25,9 @@ app.post('/board/view/:category', function (req, res) {
     var category = req.params.category;
 });
 
+app.post('/board/write/:category', function (req, res) {
+
+});
 
 app.listen(8000, function () {
     console.log("Listenning \t :8000");
