@@ -29,10 +29,6 @@ app.get('/', function (req, res) {
 });
 
 app.post('/register', function (req, res) {
-    var age = req.body.age;
-    var gender = req.body.gender;
-    var nickname = req.boby.nickname;
-
     var user = new User({
         age: req.body.age,
         gender: req.body.gender,
