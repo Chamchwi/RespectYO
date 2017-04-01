@@ -47,7 +47,12 @@ app.post('/register', function (req, res) {
 });
 
 app.post('/User/list/', function (req, res) {
-    
+    User.find(function (err, user) {
+        if (err) return res.status(500).send({
+            error: 'database failure'
+        });
+        res.json(user);
+    })
 });
 
 app.post('/board/view/:category', function (req, res) {
