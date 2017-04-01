@@ -59,8 +59,58 @@ app.post('/board/view/:category', function (req, res) {
     var category = req.params.category;
 });
 
-app.post('/board/write/:category', function (req, res) {
+app.post('/board/all', function (req, res) {
 
+});
+
+app.post('/board/write/:category', function (req, res) {
+    var category = req.params.category;
+    if (category ==  0) {
+        var board = new Board({
+            title: req.body.title,
+            category: 0,
+            writer: req.body.writer,
+            content: req.body.connect
+        });
+
+        if (writer == "") {
+            board.writer = "익명";
+        }
+
+        board.save(function (err, board) {
+            if (err) {
+                return res.json({
+                    success: false
+                })
+            }
+            return res.json({
+                success: true
+            })
+        });
+
+    } else if (category == 1) {
+        var board = new Board({
+            title: req.body.title,
+            category: 1,
+            writer: req.body.writer,
+            content: req.body.content
+        });
+
+        if (writer == "") {
+            board.writer = "익명";
+        }
+
+        board.save(function (err, board) {
+            if (err) {
+                return res.json({
+                    success: false
+                })
+            }
+            return res.json({
+                success: true
+            })
+        });
+    }
 });
 
 app.listen(8000, function () {
