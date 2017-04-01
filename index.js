@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 http.createServer(app);
+var mongoose = require('mongoose');
 
 var body_parser = require('body-parser');
 app.use(body_parser.json()); // support json encoded bodies
