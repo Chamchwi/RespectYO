@@ -5,6 +5,9 @@ var http = require('http');
 http.createServer(app);
 var mongoose = require('mongoose');
 
+var User = require('./models/user.js');
+var Board = require('./models/board.js');
+
 var body_parser = require('body-parser');
 app.use(body_parser.json()); // support json encoded bodies
 app.use(body_parser.urlencoded({
